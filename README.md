@@ -91,7 +91,7 @@ Project Link: [https://github.com/tusharjain2802/Mess-Management-System](https:/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-url]: https://www.linkedin.com/in/tushar-jain-94a6a2194/
-[product-screenshot]: https://github.com/tusharjain2802/Mess-Management-System/blob/main/Screenshots/shot.png
+[product-screenshot]: https://github.com/tusharjain2802/Mess-Management-System/blob/main/Screenshots/shot.gif
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
