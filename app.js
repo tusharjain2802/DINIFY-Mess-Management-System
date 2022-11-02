@@ -13,7 +13,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 mongoose.connect("mongodb://localhost:27017/MessManagement",{UseNewUrlParser:true});
-// mongodb+srv://admin-tushar:pswd6920@cluster0.lngsx.mongodb.net
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
