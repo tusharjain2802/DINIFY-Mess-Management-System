@@ -32,7 +32,7 @@ A Software Engineering, I made in per-final year of B.E.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
 
 The Mess Feedback System is a website that enables the user to give and receive feedback on various dishes. It eliminates the hassle of manual feedback of food dishes that is prevalent across whole nation. 
 The project supports two types of users namely, students and mess in charge. 
@@ -61,7 +61,7 @@ List things you need to run the software on local machine.
   ```sh
   Node.js
   ```
-    ```sh
+  ```sh
   MongoDB
   ```
   ```sh
