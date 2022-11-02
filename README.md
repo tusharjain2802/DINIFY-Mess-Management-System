@@ -27,7 +27,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<br>
 [![Product Name Screen Shot][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
+<br>
 
 The Mess Feedback System is a website that enables the user to give and receive feedback on various dishes. It eliminates the hassle of manual feedback of food dishes that is prevalent across whole nation. 
 The project supports two types of users namely, students and mess in charge. 
@@ -36,7 +38,6 @@ Apart from feedback and rating the provision of changing the dishes and displayi
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
@@ -97,5 +98,5 @@ Project Link: [https://github.com/tusharjain2802/Mess-Management-System](https:/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[Mongo.com]: https://webimages.mongodb.com/_com_assets/cms/kusb9stg1ndrp7j53-MongoDBLogoBrand1.png?auto=format%252Ccompress
+[Mongo.com]: https://github.com/tusharjain2802/Mess-Management-System/blob/main/Screenshots/mongo.png
 [Mongo-url]: https://www.mongodb.com/docs/manual/installation/
