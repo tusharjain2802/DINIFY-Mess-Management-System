@@ -50,7 +50,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![React][React.js]][React-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
-* [![JQuery][JQuery.com]][Mongo-url]
+* [![JQuery][Mongo.com]][Mongo-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,13 +90,10 @@ _For installing and setting up your app.
    CLIENT_SECRET = 'ENTER YOUR CLIENT_SECRET';
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/tusharjain2802) - tjain2_be20@thapar.edu
+Tushar Jain - [@tusharjain2802](https://twitter.com/tusharjain2802) - tjain2_be20@thapar.edu
 
 Project Link: [https://github.com/tusharjain2802/Mess-Management-System](https://github.com/tusharjain2802/Mess-Management-System)
 
