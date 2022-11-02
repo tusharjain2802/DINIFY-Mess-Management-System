@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+    <link rel="icon" href="../imgs/favicon.png">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/styles.css">
+
+<!-- Slider -->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+<link rel="stylesheet" href="../css/slider.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Mess Management System</h1>
+        <ul class="nav-links">
+            <li><a href="/mess">Home</li></a>
+            <li><a href="uploadmenu">Upload new Menu!</li></a>
+            <li><a href="feedbacks">View Feedbacks</li></a>
+            <li  class="active"><a href="options">Update Options</li></a>
+            <li class="ctn"><a href="/logout">Logout</li></a>
+        </ul>
+        <img src="/imgs/menu-btn.png" alt="" class="menu-btn">
+    </nav>
+    <!-- Slider -->
+    <div style="margin: 200px;"></div>
+    <div style="margin-top: 10rem;" class="blog-slider">
+      <div class="blog-slider__wrp swiper-wrapper">
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            
+            <img src="https://www.ellementry.com/blog/wp-content/uploads/2020/03/SSTEA1904_00.jpg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <span class="blog-slider__code">Dish 1</span>
+            <div class="blog-slider__title"><%= options[0].Dish %></div>
+            <div class="blog-slider__text"> <%= options[0].names %></div>
+            <a class="blog-slider__button"><%= options[0].Vote %> votes</a>
+          </div>
+        </div>
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="https://www.historyindia.com/img/stories/edible-cutlery.jpg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <span class="blog-slider__code">Dish 2</span>
+            <div class="blog-slider__title"><%= options[1].Dish %></div>
+            <div class="blog-slider__text"><%= options[1].names %></div>
+            <a class="blog-slider__button"><%= options[1].Vote %> votes</a>
+          </div>
+        </div>
+    
+           <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="https://new-img.patrika.com/upload/2019/06/25/masala.png" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <span class="blog-slider__code">Dish 3</span>
+            <div class="blog-slider__title"><%= options[2].Dish %></div>
+            <div class="blog-slider__text"><%= options[2].names %></div>
+            <a class="blog-slider__button"><%= options[2].Vote %> votes</a>
+          </div>
+        </div>
+    
+           <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="https://i.timesnowhindi.com/stories/spices-export-plunge-on-withdrawal-of-meis-benefits.jpg?tr=w-600,h-450,fo-auto" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <span class="blog-slider__code">Dish 4</span>
+            <div class="blog-slider__title"><%= options[3].Dish %></div>
+            <div class="blog-slider__text"><%= options[3].names %></div>
+            <a  class="blog-slider__button"><%= options[3].Vote %> votes</a>
+          </div>
+        </div>
+        
+        <div class="blog-slider__item swiper-slide">
+          <div class="blog-slider__img">
+            <img src="https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/eazytrendz%2F3237%2Ftrend20211029112313.jpg" alt="">
+          </div>
+          <div class="blog-slider__content">
+            <span class="blog-slider__code">Dish 5</span>
+            <div class="blog-slider__title"><%= options[4].Dish %></div>
+            <div class="blog-slider__text"><%= options[4].names %></div>
+            <a class="blog-slider__button"><%= options[4].Vote %> votes</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="blog-slider__pagination"></div>
+    </div>
+
+    <div class="container">
+    <div class="col-lg-7 mb-5 mb-lg-0">
+        <h2 style="color:#EED180; margin-top: 8rem;" class="mb-5">Give/Update 5 alternative dishes<br> for students to choose from</h2>
+
+        <form  method="post" action="/options" >
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <label style="color:#B93160;" for="op1" >Option 1:</label>
+              <input type="text" class="form-control" name="op1" id="op1"  value="<%= options[0].Dish %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+                <label style="color:#B93160;" for="op2" >Option 2:</label>
+                <input type="text" class="form-control" name="op2" id="op2"  value="<%- options[1].Dish %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+                <label style="color:#B93160;" for="op3" >Option 3:</label>
+                <input type="text" class="form-control" name="op3" id="op3"  value="<%- options[2].Dish %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+                <label style="color:#B93160;" for="op4" >Option 4:</label>
+                <input type="text" class="form-control" name="op4" id="op4"  value="<%= options[3].Dish %>">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 form-group">
+                <label style="color:#B93160;" for="op5" >Option 5:</label>
+                <input type="text" class="form-control" name="op5" id="op5"  value="<%= options[4].Dish %>"">
+            </div>
+          </div>
+          <div style="margin-bottom: 2.5rem;" class="row">
+            <div class="col-md-12">
+              <input type="submit" value="Submit" class="btn btn-primary btn-warning rounded-0 py-2 px-4">
+              <span class="submitting"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
+    <script>
+      var swiper = new Swiper('.blog-slider', {
+      spaceBetween: 30,
+      effect: 'fade',
+      loop: true,
+      mousewheel: {
+        invert: false,
+      },
+      // autoHeight: true,
+      pagination: {
+        el: '.blog-slider__pagination',
+        clickable: true,
+      }
+    });
+    </script>
+<%- include("../partials/footer") -%>

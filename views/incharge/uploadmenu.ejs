@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+    <link rel="icon" href="../imgs/favicon.png">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Upload Menu Page -->
+<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/uploadpagecss/bootstrap.min.css">
+<link rel="stylesheet" href="../css/uploadpagecss/style.css">
+
+    <!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Mess Management System</h1>
+        <ul class="nav-links">
+            <li><a href="/mess">Home</li></a>
+            <li class="active"><a href="uploadmenu">Upload new Menu!</li></a>
+            <li><a href="feedbacks">View Feedbacks</li></a>
+            <li><a href="options">Update Options</li></a>
+            <li class="ctn"><a href="/logout">Logout</li></a>
+        </ul>
+        <img src="/imgs/menu-btn.png" alt="" class="menu-btn">
+    </nav>
+
+
+<div class="content">
+    
+    <div class="container">
+
+      
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          
+          <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+
+              <h2 style="color:#D75281; margin-top: 90px;" class="mb-5">Submit the link for the<br> new Mess Menu</h2>
+
+              <form class="border-right pr-5 mb-5" method="post" action="/uploadmenu" >
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label style="color:#B93160;" for="startdate" >Valid From:</label>
+                    <input type="date" class="form-control" name="startdate" id="startdate"  placeholder="Valid from:">
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label style="color:#B93160;" for="enddate" >Valid Till:</label>
+                    <input type="date" class="form-control" name="enddate" id="enddate" placeholder="Valid Till:">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="link"  placeholder="Paste the link here">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-warning rounded-0 py-2 px-4">
+                    <span class="submitting"></span>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+            <div class="col-lg-4 ml-auto">
+              <h3 style="margin-left: 35px;" class="mb-4">Use <a target="_blank" href="https://imgur.com/"><img style="height:30px; margin: 2px 5px;" src="imgs/imgur.png"></a> to get a image link</h3>
+              <p >Just simply upload the mess menu image and copy the Direct Link after posting. Submit the same link in the form.</p>
+            </div>
+          </div>
+        </div>  
+        </div>
+      </div>
+  </div>
+
+<%- include("../partials/footer") -%>

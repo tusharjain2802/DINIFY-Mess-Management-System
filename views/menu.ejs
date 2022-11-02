@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+
+    <link rel="icon" href="/imgs/favicon.png">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">Mess Management System</h1>
+        <ul class="nav-links">
+            <li><a href="" id="home">Home</li></a>
+            <li class="active"><a href="/menu" id="menu">Mess Menu</li></a>
+            <li><a href="/review" id="review">Review Us!</li></a>
+            <li><a href="/change">Request a change</li></a>
+            <li class="ctn"><a href="/logout">Logout</li></a>
+        </ul>
+        <img src="/imgs/menu-btn.png" alt="" class="menu-btn">
+    </nav>
+
+<div class="container">
+<% imgs.forEach(function(img){ %>  
+    <img class="menuimg" src=<%= img.url %>> 
+    <div class="row">
+        <div class="col-lg-4" >
+           <h6>Valid From : <%= img.validFrom %> </h6>
+        </div>
+        <div class="col-lg-4" >
+            <a href=<%= img.url %> target="_blank" download="menu.jpg"><button class="downloadbtn"><i class="fa fa-download"></i> Download</button></a>
+         </div>
+        <div class="col-lg-4" >
+         <h6>Valid Till : <%= img.validTill %></h6>
+        </div>
+    </div>
+<% }) %>
+</div>
+<style>
+
+    h6{
+        color: #B93160;
+        margin-top: 0px;
+        text-align: center;
+        font-size: 20px;
+        margin: 0px auto 20px auto;
+    }
+    @media (min-width: 1028px){
+    .downloadbtn {
+        background-color: #B93160;
+        border: none;
+        color: #FFF89C;
+        padding: 12px 30px;
+        cursor: pointer;
+        font-size: 20px;
+        display: block;
+        margin: auto;
+        margin-bottom:30px;
+
+    }
+    .menuimg{
+        display: block;
+        margin: auto;
+        margin-top: 15%;
+        margin-bottom: 4rem;
+        height: 500px;
+        border-radius: 5px;
+        box-shadow: 10px 10px 20px -1px rgba(0, 0, 0, 0.3);
+    }
+}
+@media (max-width: 1028px){
+    .downloadbtn {
+        background-color: #B93160;
+        border: none;
+        color: #FFF89C;
+        padding: 12px 30px;
+        cursor: pointer;
+        font-size: 20px;
+        display: block;
+        margin: auto;
+        margin-bottom: 8%;
+        margin-top: 3%;
+    }
+    .menuimg{
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 10px 10px 20px -1px rgba(0, 0, 0, 0.3);
+        margin-top: 20%;
+        margin-bottom: 15%;
+    }
+}
+</style>
+
+<script>
+    const item = JSON.parse(localStorage.getItem('token'));
+    document.getElementById("home").href='home/'+JSON.stringify({name:item.name,hostel:item.hostel});
+</script>
+<%- include("partials/footer") -%>

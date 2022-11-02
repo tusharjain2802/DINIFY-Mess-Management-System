@@ -1,0 +1,124 @@
+<%- include("partials/headerindex") -%>
+
+<div class="jumbotron centered">
+    <div style="margin-top: 100px;">
+      <div class="nextline">
+        
+      <i class="fas fa-utensils fa-6x"></i><i class="fas fa-burger fa-6x"></i><i class="fas fa-martini-glass fa-6x"></i>
+      <h1 class="display-3">Mess Feedback and Menu!</h1>
+    </div>
+    <br>
+    
+      <p class="lead">Handy daily updated mess menu, share feedbacks, request changes and much more.....!</p>
+      <hr style="color:#EED180;">
+      <a class="btn btn-light btn-lg signup1" href="#register" role="button">Register</a>
+      <a class="btn btn-dark btn-lg signup2" href="/login" role="button">Login</a>
+    </div>
+  </div>
+  <div style="background-color:#FFFFFF ;" class="container" id="register">
+    <div class="card">
+        <form action="/" method="post" class="form">
+            <div  style="background-color:#D75281 ;" class="left-side">
+                <div class="left-heading">
+                    <h3>Register</h3>
+                </div>
+                <div class="steps-content">
+                    <h3>Step <span class="step-number">1</span></h3>
+                    <p class="step-number-content active">Enter your basic info</p>
+          
+                </div>
+                <ul style="background-color:#D75281 ;" class="progress-bar">
+                    <li class="active">Personal Information</li>
+                    <li>Hostel</li>
+                </ul>
+
+            </div>
+            <div class="right-side">
+                <div class="main active">
+                    <div class="text">
+                        <h2 style="color:#EED180;">Your Personal Information</h2>
+                        <p>Enter your personal information.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="text" name="name" required require id="user_name">
+                            <span>Name</span>
+                        </div>
+
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input name="number" type="number" required require>
+                            <span>Phone number</span>
+                        </div>
+                        <div class="input-div">
+                            <input name="username" type="email" pattern=".+@thapar\.edu"  required require>
+                            <span>E-mail Address</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input name="password" type="password" required require>
+                            <span>Password</span>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button style="background-color:#EED180; border-color: #FFF89C;" class="next_button">Next Step</button>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="text">
+                        <h2>Hostel Details</h2>
+                      
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input name="roomnum" type="number" required require>
+                            <span>Room Number</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                    </div>
+                    <div class="input-text">
+                      <div class="input-div">
+                          <select name="hostel">
+                              <option>Select Hostel</option>
+                              <option>O</option>
+                              <option>M</option>
+                              <option>J</option>
+                              <option>K</option>
+                          </select>
+                      </div>
+                  </div>
+                    <div class="buttons button_space">
+                        <button style="background-color:#EED180; border-color: #FFF89C;" class="back_button">Back</button>
+                        <button style="background-color:#EED180; border-color: #FFF89C;" type="submit" class="submit_button">Submit</button>
+                    </div>
+                </div>
+                 <div class="main">
+                     <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                         <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                     
+                    <div class="text congrats">
+                        <h2>Congratulations!</h2>
+                        <p>Thanks, <span class="shown_name"></span> you have successfully registered. Have a good experience.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="card">
+            <div class="card-body">
+              <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+                <i class="fab fa-google"></i>
+                Register with Google
+              </a>
+            </div>
+          </div>
+    </div>
+</div>
+<script src="src/indexscript.js"></script>
+
+<%- include("partials/footer") -%>

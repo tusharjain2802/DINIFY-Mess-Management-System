@@ -1,0 +1,76 @@
+<%- include("partials/headerindex") -%>
+
+
+<div style="background-color:#FFFFFF; padding-top: 100px;" class="container" id="login">
+    <div class="card">
+        <form class="form" action="/login" method="post">
+            <div style="background-color:#D75281 ;" class="left-side">
+                <div class="left-heading">
+                    <h3>Login</h3>
+                </div>
+                <div class="steps-content">
+                    <p class="step-number-content active">Enter your credentials.</p>
+          
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="main active">
+                    <div class="text">
+                        <h2 style="color:#EED180 ;">Enter you login email and password</h2>
+                        <p>If you haven't registered earlier. Kindly register first.</p>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <label for="position">Choose you position:</label>
+                                <select name="position" id="position">
+                                    <option>Student</option>
+                                    <option>Mess Committee</option>
+                                </select>  
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="email"  pattern=".+@thapar\.edu"  name="username" required require id="email">
+                            <span>Thapar Email</span>
+                        </div>
+                    </div>
+                    <div class="input-text">
+                        <div class="input-div">
+                            <input type="password" name="password" required require>
+                            <span>Password</span>
+                        </div>
+                    </div>
+                    <div class="buttons button_space">
+                        <button style="background-color:#EED180; border-color: #FFF89C;" class="submit_button">Submit</button>
+                    </div>
+                </div>
+
+                 <div class="main">
+                     <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                         <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                     
+                    <div class="text congrats">
+                        <h2>Congratulations!</h2>
+                        <p>Thanks, <span class="shown_name"></span> you have successfully registered. Have a good experience.</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="card">
+            <div class="card-body">
+              <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+                <i class="fab fa-google"></i>
+                Login with Google
+              </a>
+            </div>
+          </div>
+
+    </div>
+</div>
+<div style="margin:50px ;"></div>
+<script src="src/indexscript.js"></script>
+
+<%- include("partials/footer") -%>
