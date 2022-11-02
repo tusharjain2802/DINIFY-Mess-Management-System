@@ -27,9 +27,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<br>
-[![Product Name Screen Shot][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
-<br>
+
+[![Website SS][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
+
 
 The Mess Feedback System is a website that enables the user to give and receive feedback on various dishes. It eliminates the hassle of manual feedback of food dishes that is prevalent across whole nation. 
 The project supports two types of users namely, students and mess in charge. 
