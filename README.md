@@ -27,8 +27,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+### Student's Portal:
+[![Student SS][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
 
-[![Website SS][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
+### Mess Incharge's Portal:
+[![Incharge SS][product1-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
 
 
 The Mess Feedback System is a website that enables the user to give and receive feedback on various dishes. It eliminates the hassle of manual feedback of food dishes that is prevalent across whole nation. 
@@ -92,6 +95,7 @@ Project Link: [https://github.com/tusharjain2802/Mess-Management-System](https:/
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-url]: https://www.linkedin.com/in/tushar-jain-94a6a2194/
 [product-screenshot]: https://github.com/tusharjain2802/Mess-Management-System/blob/main/Screenshots/shot.gif
+[product1-screenshot]: https://github.com/tusharjain2802/Mess-Management-System/blob/main/Screenshots/shot1.gif
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
