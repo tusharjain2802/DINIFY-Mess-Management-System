@@ -66,7 +66,7 @@ List things you need to run the software on local machine.
 
 ### Installation
 
-_For installing and setting up your app.
+For installing and setting up your app.
 
 1. Get a free API Key at [https://console.developers.google.com/](https://console.developers.google.com/)
 2. Clone the repo
