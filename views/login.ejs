@@ -3,7 +3,7 @@
 
 <div style="background-color:#FFFFFF; padding-top: 100px;" class="container" id="login">
     <div class="card">
-        <form class="form" action="/login" method="post">
+        <form class="form" name="myform" action="/login" method="post">
             <div style="background-color:#D75281 ;" class="left-side">
                 <div class="left-heading">
                     <h3>Login</h3>
@@ -59,18 +59,21 @@
             </div>
         </form>
 
-        <div class="card">
-            <div class="card-body">
-              <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-                <i class="fab fa-google"></i>
-                Login with Google
-              </a>
-            </div>
-          </div>
-
+       
     </div>
 </div>
 <div style="margin:50px ;"></div>
 <script src="src/indexscript.js"></script>
-
+<script>  
+    function validateemail()  
+    {  
+    var x=document.myform.username.value;  
+    var atposition=x.indexOf("@");  
+    var dotposition=x.lastIndexOf(".");  
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+      alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+      return false;  
+      }  
+    }  
+    </script> 
 <%- include("partials/footer") -%>

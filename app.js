@@ -10,10 +10,9 @@ const mongoose  = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const findOrCreate = require("mongoose-findorcreate");
-mongoose.connect("mongodb://localhost:27017/MessManagement",{UseNewUrlParser:true});
-
+mongoose.connect("mongodb+srv://admin-tushar:pswd6920@cluster0.lngsx.mongodb.net/MessManagement",{UseNewUrlParser:true});
+// mongodb://localhost:27017
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
@@ -165,17 +164,6 @@ app.get("/already_voted", function(req,res){
     res.render("already_voted");
 
 });
-
-
-app.get("/auth/google", 
-  passport.authenticate("google",{ scope:['profile']})
-);
-app.get("/auth/google/home", 
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  function(req, res) {
-    res.redirect('/home');
-  });
-
 
 app.get("/login",function(req,res){
     res.render("login");

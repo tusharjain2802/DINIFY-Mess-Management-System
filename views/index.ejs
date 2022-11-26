@@ -17,7 +17,7 @@
   </div>
   <div style="background-color:#FFFFFF ;" class="container" id="register">
     <div class="card">
-        <form action="/" method="post" class="form">
+        <form action="/" method="post" name="myform" class="form">
             <div  style="background-color:#D75281 ;" class="left-side">
                 <div class="left-heading">
                     <h3>Register</h3>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <input name="number" type="number" required require>
+                            <input name="number" min="0" type="number" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" required require>
                             <span>Phone number</span>
                         </div>
                         <div class="input-div">
@@ -74,7 +74,7 @@
                     </div>
                     <div class="input-text">
                         <div class="input-div">
-                            <input name="roomnum" type="number" required require>
+                            <input min="0" name="roomnum" type="number" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))" required require>
                             <span>Room Number</span>
                         </div>
                     </div>
@@ -109,16 +109,19 @@
                 </div>
             </div>
         </form>
-        <div class="card">
-            <div class="card-body">
-              <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-                <i class="fab fa-google"></i>
-                Register with Google
-              </a>
-            </div>
-          </div>
     </div>
 </div>
 <script src="src/indexscript.js"></script>
-
+<script>  
+    function validateemail()  
+    {  
+    var x=document.myform.username.value;  
+    var atposition=x.indexOf("@");  
+    var dotposition=x.lastIndexOf(".");  
+    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+      alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+      return false;  
+      }  
+    }  
+    </script> 
 <%- include("partials/footer") -%>
