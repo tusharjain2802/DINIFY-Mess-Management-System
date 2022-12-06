@@ -12,8 +12,6 @@
   <p align="center">
    easy to use, whole schedule on your finger tips.
     <br />
-    <a href="https://github.com/tusharjain2802/Mess-Management-System/blob/main/Docs.pdf"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://hostel-mess-management-system.herokuapp.com/">View Demo</a>
     ·
