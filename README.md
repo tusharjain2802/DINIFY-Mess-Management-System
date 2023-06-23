@@ -13,7 +13,7 @@
    easy to use, whole schedule on your finger tips.
     <br />
     <br />
-    <a href="https://hostel-mess-management-system.herokuapp.com/">View Demo</a>
+    <a href="https://mess-management-system.onrender.com/">View Demo</a>
     ·
     <a href="mailto:tjain2_be20@thapar.edu">Report Bug</a>
     ·
@@ -26,15 +26,15 @@
 ## About The Project
 
 ### Student's Portal:
-[![Student SS][product-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
+[![Student SS][product-screenshot]](https://mess-management-system.onrender.com/)
 
-### Mess Incharge's Portal:
-[![Incharge SS][product1-screenshot]](https://hostel-mess-management-system.herokuapp.com/)
+### Mess In-charge's Portal:
+[![Incharge SS][product1-screenshot]](https://mess-management-system.onrender.com/)
 
 
-The Mess Feedback System is a website that enables the user to give and receive feedback on various dishes. It eliminates the hassle of manual feedback of food dishes that is prevalent across whole nation. 
-The project supports two types of users namely, students and mess in charge. 
-Apart from feedback and rating the provision of changing the dishes and displaying menu is also given to the user. The user can create an account on the app. Login and logout provision for multiple user support on same device are available.
+The Mess Feedback System is a website that enables the user to give and receive feedback on various dishes. It eliminates the hassle of manual feedback of food dishes that are prevalent across the whole nation. 
+The project supports two types of users, namely, students and the mess in charge. 
+Apart from feedback and rating, the provision of changing the dishes and displaying the menu is also given to the user. The user can create an account on the app. Login and logout provisions for multiple user support on the same device are available.
 
 
 ### Built With
@@ -48,7 +48,7 @@ Apart from feedback and rating the provision of changing the dishes and displayi
 
 ### Prerequisites
 
-List things you need to run the software on local machine.
+List things you need to run the software on the local machine.
   ```sh
   Node.js
   ```
