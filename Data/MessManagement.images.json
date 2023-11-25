@@ -1,0 +1,151 @@
+[{
+  "_id": {
+    "$oid": "6303d2b8a93481385f60ff00"
+  },
+  "id": 1,
+  "validFrom": "2022-11-01",
+  "validTill": "2022-11-30",
+  "__v": 0,
+  "item": [
+    [
+      [
+        "Cornflakes", 
+        "Brown Bread",
+        "Paneer Parantha",
+        "Cold Coffee"
+      ],
+      [
+        "Soya Keema Matar",
+        "Moong Masoor Dal",
+        "Plane Rice",
+        "Lemon Water"
+      ],
+      [
+        "Tadka Dal",
+        "Veg Makhni",
+        "Jeera Rice",
+        "Jalebi"
+      ]
+    ],
+    [
+      [
+        "Poha",
+        "Gobi Parantha",
+        "Cold Bournvita",
+        "Brown Bread"
+      ],
+      [
+        "Aloo Jeera",
+        "Rajma",
+        "Jeera Rice",
+        "Green Salad"
+      ],
+      [
+        "Dal Makhani",
+        "Rosse sauce Pasta",
+        "Fried Rice",
+        "Gulab Jamun"
+      ]
+    ],
+    [
+      [
+        "Cutlets",
+        "Mix Parantha",
+        "Brown Bread",
+        "Cold Coffee"
+      ],
+      [
+        "Paneer Lababdar",
+        "Dal Panchratan",
+        "Jeera Rice",
+        "Raita"
+      ],
+      [
+        "Red Masoor Dal",
+        "Matar Methi malai",
+        "Plain Rice",
+        "Brownie"
+      ]
+    ],
+    [
+      [
+        "Sandwich",
+        "Brown Bread",
+        "Paneer Parantha",
+        "Cold Coffee"
+      ],
+      [
+        "Soya Keema Matar",
+        "Moong Masoor Dal",
+        "Plane Rice",
+        "Lemon Water"
+      ],
+      [
+        "Tadka Dal",
+        "Veg Makhni",
+        "Jeera Rice",
+        "Jalebi"
+      ]
+    ],
+    [
+      [
+        "Sweet Corn",
+        "Brown Bread",
+        "Paneer Parantha",
+        "Cold Coffee"
+      ],
+      [
+        "Black Chana",
+        "Kadhayi Soya",
+        "Plane Rice",
+        "Lemon Water"
+      ],
+      [
+        "Urad Dal",
+        "Halwa",
+        "Paneer Butter Masala",
+        "Tandoori roti"
+      ]
+    ],
+    [
+      [
+        "Dalia",
+        "Brown Bread",
+        "Curd",
+        "Cold Coffee"
+      ],
+      [
+        "Sambar",
+        "Uttapam",
+        "Wada",
+        "Roohafza"
+      ],
+      [
+        "Dal Chana",
+        "Bharta",
+        "Plain Rice",
+        "Ice Cream"
+      ]
+    ],
+    [
+      [
+        "Macroni",
+        "Brown Bread",
+        "Paneer Parantha",
+        "Cold Coffee"
+      ],
+      [
+        "Choley",
+        "Chutney",
+        "Bhaturey",
+        "Lemon Water"
+      ],
+      [
+        "Green moong Dal",
+        "Aloo Gobhi Matar",
+        "Veg Biryani",
+        "Kheer"
+      ]
+    ]
+  ]
+}]

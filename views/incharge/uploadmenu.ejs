@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mess Management System</title>
+    <title>Dinify</title>
     <link rel="icon" href="../imgs/favicon.png">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -25,7 +25,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1 class="logo">Mess Management System</h1>
+        <h1 class="logo">Dinify</h1>
         <ul class="nav-links">
             <li><a href="/mess">Home</li></a>
             <li class="active"><a href="uploadmenu">Upload new Menu!</li></a>
@@ -36,54 +36,188 @@
         <img src="/imgs/menu-btn.png" alt="" class="menu-btn">
     </nav>
 
-
+<form class="aaaa" method="post" action="/uploadmenu">
 <div class="content">
-    
-    <div class="container">
-
-      
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          
-          <div class="row align-items-center">
-            <div class="col-lg-7 mb-5 mb-lg-0">
-
-              <h2 style="color:#D75281; margin-top: 90px;" class="mb-5">Submit the link for the<br> new Mess Menu</h2>
-
-              <form class="border-right pr-5 mb-5" method="post" action="/uploadmenu" >
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <label style="color:#B93160;" for="startdate" >Valid From:</label>
-                    <input type="date" class="form-control" name="startdate" id="startdate"  placeholder="Valid from:">
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label style="color:#B93160;" for="enddate" >Valid Till:</label>
-                    <input type="date" class="form-control" name="enddate" id="enddate" placeholder="Valid Till:">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12 form-group">
-                    <input type="text" class="form-control" name="link"  placeholder="Paste the link here">
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <input type="submit" value="Submit" class="btn btn-primary btn-warning rounded-0 py-2 px-4">
-                    <span class="submitting"></span>
-                  </div>
-                </div>
-              </form>
-
-            </div>
-            <div class="col-lg-4 ml-auto">
-              <h3 style="margin-left: 35px;" class="mb-4">Use <a target="_blank" href="https://imgur.com/"><img style="height:30px; margin: 2px 5px;" src="imgs/imgur.png"></a> to get a image link</h3>
-              <p >Just simply upload the mess menu image and copy the Direct Link after posting. Submit the same link in the form.</p>
-            </div>
-          </div>
-        </div>  
-        </div>
+    <div>
+      <div class="table-wrapper ">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="breakfast">
+              <% var temp=""; %>
+                <td class="row-header">BreakFast</td>
+                <td><% imgs.item[0][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bm" + index %>
+                  <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[1][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bt" + index %>
+                  <input name="<%= temp %>"  value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[2][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bw" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[3][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bth" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[4][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bf" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[5][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bs" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[6][0].forEach(function(level2Array, index) { %>
+                  <% temp = "bsu" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+            </tr>
+            <tr id="lunch">
+                <td class="row-header">Lunch</td>
+                <td><% imgs.item[0][1].forEach(function(level2Array, index) { %>
+                  <% temp = "lm" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[1][1].forEach(function(level2Array, index) { %>
+                  <% temp = "lt" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[2][1].forEach(function(level2Array, index) { %>
+                  <% temp = "lw" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[3][1].forEach(function(level2Array, index) { %>
+                  <% temp = "lth" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[4][1].forEach(function(level2Array, index) { %>
+                  <% temp = "lf" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[5][1].forEach(function(level2Array, index) { %>
+                  <% temp = "ls" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[6][1].forEach(function(level2Array, index) { %>
+                  <% temp = "lsu" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+            </tr>
+            <tr id="dinner">
+                <td class="row-header">Dinner</td>
+                <td><% imgs.item[0][2].forEach(function(level2Array, index) { %>
+                  <% temp = "dm" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[1][2].forEach(function(level2Array, index) { %>
+                  <% temp = "dt" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[2][2].forEach(function(level2Array, index) { %>
+                  <% temp = "dw" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[3][2].forEach(function(level2Array, index) { %>
+                  <% temp = "dth" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[4][2].forEach(function(level2Array, index) { %>
+                  <% temp = "df" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[5][2].forEach(function(level2Array, index) { %>
+                  <% temp = "ds" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+                <td><% imgs.item[6][2].forEach(function(level2Array, index) { %>
+                  <% temp = "dsu" + index %>
+                    <input name="<%= temp %>" value="<%= level2Array %>">
+                <% }); %></td>
+            </tr>
+            <tbody>
+        </table>
+    </div>
+    <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label style="color:#B93160;" for="startdate" >Valid From:</label>
+        <input  type="date" class="date-inp form-control" name="startdate" id="startdate"  placeholder="Valid from:" required>
+      </div>
+      <div class="col-md-6 form-group">
+        <label style="color:#B93160;" for="enddate" >Valid Till:</label>
+        <input  type="date" class="date-inp form-control" name="enddate" id="enddate" placeholder="Valid Till:" required>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-md-12 btn-class-sbm">
+        <input  type="submit" value="Submit" class="subm-btn btn btn-primary btn-warning rounded-0 py-2 px-4">
+        <span class="submitting"></span>
+      </div>
+    </div>
+    </div>
       </div>
   </div>
+  </form>
+  <style>
+    .date-inp{
+      width: 70%;
+      height: 70%;
+    }
+    .btn-class.sbm{
+      margin: auto;
+    }
+    .subm-btn{
+      background-color:#B93160;
+      color:#E1AD01;
+      display: block;
+      margin: 40px auto 20px auto;
+    }
+    h6{
+        color: #B93160;
+        margin-top: 0px;
+        text-align: center;
+        font-size: 20px;
+        /* margin: 0px auto 10px auto; */
+    }
+    input {
+      border: none;
+      outline: none;
+      overflow: auto;
+      align-items: center;
+    background: hsla(0,0%,85%,.5);
+    border-radius: 10px;
+    color: #757575;
+    display: flex;
+    font-family: Poppins;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    /* height: 40px; */
+    justify-content: flex-start;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 2px;
+    }
+    .table-wrapper {
+    margin: auto;
+    /* margin: 8rem 5rem 5rem 5rem; */
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+    overflow: auto;
+}
+</style>
 
 <%- include("../partials/footer") -%>

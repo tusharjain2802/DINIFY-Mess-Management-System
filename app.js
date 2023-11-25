@@ -12,12 +12,11 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const findOrCreate = require("mongoose-findorcreate");
 mongoose.connect("mongodb+srv://admin-tushar:pswd6920@cluster0.lngsx.mongodb.net/MessManagement",{UseNewUrlParser:true});
-
+// mongodb://localhost:27017
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
-var messagebird = require('messagebird')()
 
 app.use(session({
     secret: "Our little Secret.",
@@ -47,11 +46,19 @@ var postSchema = {
 };
 const Post = mongoose.model("Post", postSchema);
 
+
+var countSchema = new mongoose.Schema({
+    lpc: Number,
+    opc: Number
+});
+const PeopleCount = mongoose.model("PeopleCount", countSchema);
+
 var imageSchema = new mongoose.Schema({
     id : Number,
     url : String,
     validFrom : String,
-    validTill : String
+    validTill : String,
+    item:[[[String]]],
 });
 const Image = mongoose.model("Image", imageSchema);
 
@@ -88,7 +95,17 @@ passport.deserializeUser(function(id, done){
     });
 });
 
+app.post('/getCount',  async (req, res) => {
+    try {
+        const user = await PeopleCount.findOne()
+        console.log(user);
+        res.send(user)
+    } catch (error) {
+        console.error(error.message)
+        res.send("Server Error")
 
+    }
+})
 
 app.get("/",function(req,res){
     res.render("index");
@@ -103,12 +120,18 @@ app.get("/mess",function(req,res){
     }
 });
 app.get("/uploadmenu",function(req,res){
-    if(req.isAuthenticated()){
-        res.render("incharge/uploadmenu");
-    }
-    else{
-        res.redirect("/login");
-    }
+    // if(req.isAuthenticated()){
+        async function displayMenu() {
+            const image = await Image.findOne({ id:1 });
+            //foundList.save();
+            res.render("incharge/uploadmenu",{imgs:image});
+            console.log(image.validFrom);
+            }
+            displayMenu();
+    // }
+    // else{
+    //     res.redirect("/login");
+    // }
 });
 app.get("/feedbacks",function(req,res){
     if(req.isAuthenticated()){
@@ -137,7 +160,20 @@ app.get("/login",function(req,res){
     res.render("login");
 });
 
+app.get('/home/person',function(req,res,next)
+{
+    
+        personData =PeopleCount.find({}, function(err, personData){
+            personData.forEach(element => {
+                res.send({status:true,opc:element.opc,lpc:element.lpc})
+            });
+        });
+    
+})
+
 app.get("/home/:user", function(req,res){
+    
+    
     if(req.isAuthenticated()){
         const user = JSON.parse(req.params.user);
         res.render("home",{user});
@@ -147,6 +183,7 @@ app.get("/home/:user", function(req,res){
     }
 
 });
+
 
 app.get("/already_voted", function(req,res){
     res.render("already_voted");
@@ -158,14 +195,45 @@ app.get("/login",function(req,res){
   });
 
 app.get("/menu",function(req,res){
-    if(req.isAuthenticated()){
-        Image.find({}, function(err, imgs){
-            res.render("menu",{imgs:imgs});
-        });
-    }     
-    else{
-        res.redirect("/login");
-    }
+
+    result =Image.find({}, function(err, personData){
+
+        async function print3DArray() {
+            try {
+                // Find the document with the 3D array (you can use any criteria to find the specific document)
+                const image = await Image.findOne({ id:1 });
+        
+                if (image) {
+                    for (const i of image.item) {
+                        for (const j of i) {
+                            for(const k of j){
+                                console.log(k);
+                            }
+                        }
+                    }
+                } else {
+                    console.log('Image not found');
+                }
+
+                res.render("menu",{imgs:image});
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        print3DArray();
+
+    });
+   
+    // if(req.isAuthenticated()){
+        // Image.findOne({id:1}, function(err, imgs){
+        //     var items = [imgs.item];
+        //     res.render("menu",{imgs:imgs, items:items});
+        // });
+    // }     
+    // else{
+    //     res.redirect("/login");
+    // }
 });
 app.get("/review",function(req,res){
     if(req.isAuthenticated()){
@@ -356,20 +424,155 @@ app.post("/review", function(req,res){
     });
 });
 app.post("/uploadmenu", function(req,res){
-    // const image = new Image({
-    //     validFrom:req.body.startdate,
-    //     validTill:req.body.enddate,
-    //     id : 1,
-    //     url : req.body.link
-    // });
-    // image.save();
-    Image.findOne({id:1}, function(err, foundList){
-        foundList.validFrom=req.body.startdate;
-        foundList.validTill = req.body.enddate;
-        foundList.url = req.body.link;
-        foundList.save();
-        res.redirect("/uploadmenu");
+    Image.findOne({id:1}, function(err, foundMenu){
+        foundMenu.validFrom = req.body.startdate;
+        foundMenu.validTill = req.body.enddate;
+        foundMenu.item = [
+            [
+              [
+                req.body.bm0, 
+                req.body.bm1,
+                req.body.bm2,
+                req.body.bm3
+              ],
+              [
+                req.body.lm0,
+                req.body.lm1,
+                req.body.lm2,
+                req.body.lm3
+              ],
+              [
+                req.body.dm0,
+                req.body.dm1,
+                req.body.dm2,
+                req.body.dm3
+              ]
+            ],
+            [
+                [
+                    req.body.bt0, 
+                    req.body.bt1,
+                    req.body.bt2,
+                    req.body.bt3
+                  ],
+                  [
+                    req.body.lt0,
+                    req.body.lt1,
+                    req.body.lt2,
+                    req.body.lt3
+                  ],
+                  [
+                    req.body.dt0,
+                    req.body.dt1,
+                    req.body.dt2,
+                    req.body.dt3
+                  ]
+            ],
+            [
+                [
+                    req.body.bw0, 
+                    req.body.bw1,
+                    req.body.bw2,
+                    req.body.bw3
+                  ],
+                  [
+                    req.body.lw0,
+                    req.body.lw1,
+                    req.body.lw2,
+                    req.body.lw3
+                  ],
+                  [
+                    req.body.dw0,
+                    req.body.dw1,
+                    req.body.dw2,
+                    req.body.dw3
+                  ]
+            ],
+            [
+                [
+                    req.body.bth0, 
+                    req.body.bth1,
+                    req.body.bth2,
+                    req.body.bth3
+                  ],
+                  [
+                    req.body.lth0,
+                    req.body.lth1,
+                    req.body.lth2,
+                    req.body.lth3
+                  ],
+                  [
+                    req.body.dth0,
+                    req.body.dth1,
+                    req.body.dth2,
+                    req.body.dth3
+                  ]
+            ],
+            [
+                [
+                    req.body.bf0, 
+                    req.body.bf1,
+                    req.body.bf2,
+                    req.body.bf3
+                  ],
+                  [
+                    req.body.lf0,
+                    req.body.lf1,
+                    req.body.lf2,
+                    req.body.lf3
+                  ],
+                  [
+                    req.body.df0,
+                    req.body.df1,
+                    req.body.df2,
+                    req.body.df3
+                  ]
+            ],
+            [
+                [
+                    req.body.bs0, 
+                    req.body.bs1,
+                    req.body.bs2,
+                    req.body.bs3
+                  ],
+                  [
+                    req.body.ls0,
+                    req.body.ls1,
+                    req.body.ls2,
+                    req.body.ls3
+                  ],
+                  [
+                    req.body.ds0,
+                    req.body.ds1,
+                    req.body.ds2,
+                    req.body.ds3
+                  ]
+            ],
+            [
+                [
+                    req.body.bsu0, 
+                    req.body.bsu1,
+                    req.body.bsu2,
+                    req.body.bsu3
+                  ],
+                  [
+                    req.body.lsu0,
+                    req.body.lsu1,
+                    req.body.lsu2,
+                    req.body.lsu3
+                  ],
+                  [
+                    req.body.dsu0,
+                    req.body.dsu1,
+                    req.body.dsu2, 
+                    req.body.dsu3
+                  ]
+            ]
+          ];
+        foundMenu.save();
+        
     });
+    res.redirect("uploadmenu");
 });
 
 app.post("/options", function(req,res){

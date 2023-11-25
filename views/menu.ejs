@@ -20,7 +20,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1 class="logo">Mess Management System</h1>
+        <h1 class="logo">Dinify</h1>
         <ul class="nav-links">
             <li><a href="" id="home">Home</li></a>
             <li class="active"><a href="/menu" id="menu">Mess Menu</li></a>
@@ -31,21 +31,107 @@
         <img src="/imgs/menu-btn.png" alt="" class="menu-btn">
     </nav>
 
-<div class="container">
-<% imgs.forEach(function(img){ %>  
-    <img class="menuimg" src=<%= img.url %>> 
+<div >
+
+<div class="table-wrapper ">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+            <th>Saturday</th>
+            <th>Sunday</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="breakfast">
+            <td class="row-header">BreakFast</td>
+            <td><% imgs.item[0][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[1][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[2][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[3][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[4][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[5][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[6][0].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+        </tr>
+        <tr id="lunch">
+            <td class="row-header">Lunch</td>
+            <td><% imgs.item[0][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[1][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[2][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[3][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[4][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[5][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[6][1].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+        </tr>
+        <tr id="dinner">
+            <td class="row-header">Dinner</td>
+            <td><% imgs.item[0][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[1][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[2][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[3][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[4][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[5][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+            <td><% imgs.item[6][2].forEach(function(level2Array) { %>
+                <%= level2Array %><br>
+            <% }); %></td>
+        </tr>
+        <tbody>
+    </table>
+</div>
     <div class="row">
-        <div class="col-lg-4" >
-           <h6>Valid From : <%= img.validFrom %> </h6>
+        <div class="col-lg-6" >
+           <h6>Valid From : <%= imgs.validFrom %> </h6>
         </div>
-        <div class="col-lg-4" >
-            <a href=<%= img.url %> target="_blank" download="menu.jpg"><button class="downloadbtn"><i class="fa fa-download"></i> Download</button></a>
-         </div>
-        <div class="col-lg-4" >
-         <h6>Valid Till : <%= img.validTill %></h6>
+        <div class="col-lg-6" >
+         <h6>Valid Till : <%= imgs.validTill %></h6>
         </div>
     </div>
-<% }) %>
+
 </div>
 <style>
 
@@ -56,49 +142,9 @@
         font-size: 20px;
         margin: 0px auto 20px auto;
     }
-    @media (min-width: 1028px){
-    .downloadbtn {
-        background-color: #B93160;
-        border: none;
-        color: #FFF89C;
-        padding: 12px 30px;
-        cursor: pointer;
-        font-size: 20px;
-        display: block;
-        margin: auto;
-        margin-bottom:30px;
-
-    }
-    .menuimg{
-        display: block;
-        margin: auto;
-        margin-top: 15%;
-        margin-bottom: 4rem;
-        height: 500px;
-        border-radius: 5px;
-        box-shadow: 10px 10px 20px -1px rgba(0, 0, 0, 0.3);
-    }
-}
-@media (max-width: 1028px){
-    .downloadbtn {
-        background-color: #B93160;
-        border: none;
-        color: #FFF89C;
-        padding: 12px 30px;
-        cursor: pointer;
-        font-size: 20px;
-        display: block;
-        margin: auto;
-        margin-bottom: 8%;
-        margin-top: 3%;
-    }
-    .menuimg{
-        width: 100%;
-        border-radius: 5px;
-        box-shadow: 10px 10px 20px -1px rgba(0, 0, 0, 0.3);
-        margin-top: 20%;
-        margin-bottom: 15%;
-    }
+    .table-wrapper {
+   
+    overflow: auto;
 }
 </style>
 

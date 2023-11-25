@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mess Management System</title>
+    <title>Dinify</title>
 
     <link rel="icon" href="/imgs/favicon.png">
     <!-- Font Awesome -->
@@ -20,7 +20,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <h1 class="logo">Mess Management System</h1>
+        <h1 class="logo">Dinify</h1>
         <ul class="nav-links">
             <li class="active"><a href="#" id="home">Home</li></a>
             <li><a href="/menu" id="menu">Mess Menu</li></a>
@@ -33,15 +33,17 @@
 
     <header class="header" style="margin-top: 50px;">    
         <div class="header-content">
-          <h3 >Hello, <%=user.name %></h3>
+          <h3 >Hello, <%=user.name %></h3> 
             <h2>Live your Best hostel Moments</h2>
             <div class="line"></div>
             <h1>Hostel-<%=user.hostel%></h1>
+            <div id="testing123" style="font-size: 24px; color: #D75281;"></div>
         </div>
     </header>
     <!-- features -->
 
     <div id="info" style="display: none;">
+      
       <input name="user" value=<%=user.name%> id="username">
       <input name="hostel" value=<%=user.hostel%> id="hostel"> 
     </div>
@@ -65,12 +67,33 @@
       </div>
     </div>
       </section>
-
+     
       <script>
         //window.onload(()=>{
           name = document.getElementById('username').value;
           hostel = document.getElementById('hostel').value;
           localStorage.setItem('token',JSON.stringify({name,hostel}));
         //});
+        place = document.getElementById("testing123")
+        function displayHello()
+        {
+          fetch('http://localhost:3000/home/person') 
+          .then(response => { 
+            if (response.ok) { 
+              return response.json(); 
+            } else { 
+              throw new Error('API request failed'); 
+            } 
+          }) 
+          .then(data => { 
+            place.innerHTML=`<b><i>Overall Person Count: ${data.opc}  <br> Live Person Count: ${data.lpc}</b></i>`;
+          
+          }) 
+          .catch(error => { 
+            // Handle any errors here  
+            console.error("error");
+  });
+        }
+        setInterval(displayHello, 1000);
       </script>
 <%- include("partials/footer") -%>
