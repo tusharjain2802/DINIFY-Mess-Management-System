@@ -16,7 +16,9 @@ mongoose.connect("mongodb+srv://admin-tushar:pswd6920@cluster0.lngsx.mongodb.net
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
+const cors = require("cors")
 
+app.use(cors({origin: 'https://mess-management-system.onrender.com/'}));
 
 app.use(session({
     secret: "Our little Secret.",
@@ -245,7 +247,7 @@ app.get("/review",function(req,res){
     
 });
 
-app.get("/change",function(req,res){
+app.get("/change",function(req,res){ 
     if(req.isAuthenticated()){
         Option.find({}, function(err, options){
             res.render("change",{options:options});

@@ -47,7 +47,7 @@
       <input name="user" value=<%=user.name%> id="username">
       <input name="hostel" value=<%=user.hostel%> id="hostel"> 
     </div>
-
+  
     <section style="z-index: -1;" id="features">
         <div class="row">
           <div class="col-lg-4 feature-box">
@@ -77,7 +77,7 @@
         place = document.getElementById("testing123")
         function displayHello()
         {
-          fetch('http://localhost:3000/home/person') 
+          fetch('https://mess-management-system.onrender.com/home/person') 
           .then(response => { 
             if (response.ok) { 
               return response.json(); 
